@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas1 - M Daffa Wicaksono</title>
+
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Playfair+Display:wght@600&display=swap');
+
+    body {
+        margin: 0;
+        font-family: 'Quicksand', sans-serif;
+        background: #fff8f0;
+        color: #5a4a42;
+    }
+
+    .header {
+        text-align: center;
+        padding: 30px;
+        background: #f6d6d6;
+        border-bottom: 3px dashed #e4a9a9;
+    }
+
+    .header h1 {
+        font-family: 'Playfair Display', serif;
+        color: #8b5e5e;
+    }
+
+    .sub {
+        color: #a67c7c;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        background: #e4a9a9;
+        padding: 12px;
+    }
+
+    .navbar a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 30px auto;
+        padding: 0 20px;
+    }
+
+    .card {
+        background: #ffffff;
+        border-radius: 15px;
+        padding: 20px;
+        margin-bottom: 20px;
+        border: 2px solid #f3cfcf;
+        box-shadow: 5px 5px 0 #f3cfcf;
+    }
+
+    .card h2 {
+        font-family: 'Playfair Display', serif;
+        border-bottom: 2px dotted #f3cfcf;
+        padding-bottom: 5px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 10px;
+        border: 1px solid #e4a9a9;
+        text-align: center;
+    }
+
+    th {
+        background: #f6d6d6;
+    }
+
+    form input, form button {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border-radius: 10px;
+        border: 1px solid #e4a9a9;
+    }
+
+    form input {
+        background: #fff0f0;
+    }
+
+    form button {
+        background: #e4a9a9;
+        color: white;
+        cursor: pointer;
+    }
+
+    .img {
+        width: 100%;
+        border-radius: 15px;
+        border: 2px solid #f3cfcf;
+    }
+
+    .footer {
+        text-align: center;
+        padding: 15px;
+        background: #f6d6d6;
+        margin-top: 30px;
+    }
+    </style>
+</head>
+
+<body>
+
+<header class="header">
+    <h1>Website M Daffa Wicaksono</h1>
+    <p class="sub">Modern Futuristic Design</p>
+</header>
+
+<nav class="navbar">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+</nav>
+
+<main class="container">
+    <section class="card">
+        <h2>Paragraf</h2>
+        <p>Lorem ipsum dolor sit amet adalah teks standar industri percetakan...</p>
+    </section>
+
+    <section class="card">
+        <h2>Tabel Data</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Nilai</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>M Daffa Wicaksono</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Rifky</td>
+                    <td>5</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="card">
+        <h2>Form Identitas</h2>
+        <form>
+            <input type="text" placeholder="Masukkan Nama">
+            <input type="email" placeholder="Masukkan Email" required>
+            <input type="color">
+            <button type="submit">Kirim</button>
+        </form>
+    </section>
+
+    <section class="card">
+        <h2>Contoh Gambar</h2>
+        <img src="panda.png" alt="Gambar" class="img">
+    </section>
+
+    <section class="card">
+        <h2>About Me</h2>
+        <p>M Daffa Wicaksono is the founder of a Tech Company...</p>
+    </section>
+</main>
+
+<footer class="footer">
+    © SINCE 2000
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+
+// ANIMASI SCROLL DARI KANAN → KIRI
+const cards = document.querySelectorAll(".card");
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateX(0)";
+        }
+    });
+});
+
+cards.forEach((card) => {
+    card.style.opacity = "0";
+    card.style.transform = "translateX(200px) scale(0.95)";
+    card.style.transition = "0.8s cubic-bezier(0.25, 1, 0.5, 1)";
+    observer.observe(card);
+});
+
+
+// TYPING EFFECT
+const title = document.querySelector(".header h1");
+const text = title.textContent;
+title.textContent = "";
+
+let i = 0;
+function typing() {
+    if (i < text.length) {
+        title.textContent += text.charAt(i);
+        i++;
+        setTimeout(typing, 60);
+    }
+}
+typing();
+
+
+// EFEK KLIK CARD
+cards.forEach(card => {
+    card.addEventListener("click", function() {
+        this.style.transform = "scale(1.05)";
+        setTimeout(() => {
+            this.style.transform = "scale(1)";
+        }, 300);
+    });
+});
+
+
+// BACKGROUND COLOR PICKER
+const colorInput = document.querySelector('input[type="color"]');
+document.body.style.transition = "background 0.5s";
+
+colorInput.addEventListener("input", function() {
+    document.body.style.background = this.value;
+});
+
+</script>
+
+</body>
+</html>

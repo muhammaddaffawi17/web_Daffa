@@ -1,0 +1,132 @@
+/* FONT KLASIK + LUCU */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Playfair+Display:wght@600&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    background: #fff8f0;
+    color: #5a4a42;
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+    padding: 30px;
+    background: #f6d6d6;
+    border-bottom: 3px dashed #e4a9a9;
+}
+
+.header h1 {
+    font-family: 'Playfair Display', serif;
+    color: #8b5e5e;
+}
+
+.sub {
+    color: #a67c7c;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    background: #e4a9a9;
+    padding: 12px;
+    border-bottom: 2px solid #d18c8c;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #fff0f0;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* CARD */
+.card {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 2px solid #f3cfcf;
+    box-shadow: 5px 5px 0 #f3cfcf;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+/* JUDUL CARD */
+.card h2 {
+    font-family: 'Playfair Display', serif;
+    border-bottom: 2px dotted #f3cfcf;
+    padding-bottom: 5px;
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #e4a9a9;
+    text-align: center;
+}
+
+th {
+    background: #f6d6d6;
+}
+
+/* FORM */
+form input, form button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: 1px solid #e4a9a9;
+}
+
+form input {
+    background: #fff0f0;
+}
+
+form button {
+    background: #e4a9a9;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background: #d18c8c;
+}
+
+/* GAMBAR */
+.img {
+    width: 100%;
+    border-radius: 15px;
+    border: 2px solid #f3cfcf;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 15px;
+    background: #f6d6d6;
+    border-top: 3px dashed #e4a9a9;
+    margin-top: 30px;
+}
